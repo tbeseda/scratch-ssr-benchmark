@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@architect/functions": "^8.1.0",
+    "@enhance/core": "^0.1.0-alpha.0",
+    "@enhance/loader": "^0.1.0-alpha.0"
+  }
+}

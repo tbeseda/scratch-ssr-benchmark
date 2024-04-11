@@ -5,6 +5,7 @@ import { buildNextHandler, buildNextPagesHandler } from "./next.js";
 import { buildNuxtHandler } from "./nuxt.js";
 import { buildSveltekitHandler } from "./svelte.js";
 import { buildEnhanceHandler } from "./enhance.js";
+import { buildEnhanceCoreHandler } from "./enhance-core.js";
 import http from "node:http";
 import { getDuplicationFactor, logResultsTable } from "./result-format.js";
 
@@ -43,6 +44,7 @@ const handlers = [
   { name: "nuxt", handler: await buildNuxtHandler() },
   { name: "sveltekit", handler: await buildSveltekitHandler() },
   { name: "enhance", handler: await buildEnhanceHandler() },
+  { name: "enhance-core", handler: await buildEnhanceCoreHandler() },
 ];
 
 for (let handler of handlers) {
