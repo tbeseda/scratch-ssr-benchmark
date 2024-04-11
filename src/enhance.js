@@ -1,7 +1,7 @@
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import arc from '@architect/functions'
-import router from '../node_modules/@enhance/arc-plugin-enhance/src/http/any-catchall/router.mjs'
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import router from '@enhance/arc-plugin-enhance/src/http/any-catchall/router.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
