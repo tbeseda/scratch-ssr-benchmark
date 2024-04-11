@@ -4,6 +4,7 @@ import { buildRemixHandler } from "./remix.js";
 import { buildNextHandler, buildNextPagesHandler } from "./next.js";
 import { buildNuxtHandler } from "./nuxt.js";
 import { buildSveltekitHandler } from "./svelte.js";
+import { buildEnhanceHandler } from "./enhance.js";
 import http from "node:http";
 import { getDuplicationFactor, logResultsTable } from "./result-format.js";
 
@@ -11,7 +12,7 @@ export async function run(handler, collect = false) {
   const request = new IncomingMessage();
   const response = new ServerResponse(request, collect);
 
-  handler(request, response);
+  await handler(request, response);
 
   await response.await;
   return response;
@@ -41,6 +42,7 @@ const handlers = [
   { name: "next-pages", handler: await buildNextPagesHandler() },
   { name: "nuxt", handler: await buildNuxtHandler() },
   { name: "sveltekit", handler: await buildSveltekitHandler() },
+  { name: "enhance", handler: await buildEnhanceHandler() },
 ];
 
 for (let handler of handlers) {
